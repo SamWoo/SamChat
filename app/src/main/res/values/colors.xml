@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorRed">#f2473d</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorF0">#f0f0f0</color>
+    <color name="color9">#999999</color>
+    <color name="colorF4">#f4f4f4</color>
+    <color name="chat_blue">#00acff</color>
+    <color name="chat_blue_pressed">#00a1db</color>
+    <color name="chat_blue_disabled">#559c9c9c</color>
+</resources>
