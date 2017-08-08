@@ -18,4 +18,5 @@
     <string name="messages">消息</string>
     <string name="contacts">联系人</string>
     <string name="dynamic">动态</string>
+    <string name="send">发送</string>
 </resources>

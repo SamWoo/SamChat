@@ -60,6 +60,10 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.2'
     //support bottom-bar
     compile 'com.roughike:bottom-bar:2.0.2'
+    //support cardview
+    compile 'com.android.support:cardview-v7:26.0.0'
+
+
     //support bomb
     //    compile 'cn.bmob.android:bmob-sdk:3.5.5'
     //如果你想应用能够兼容Android6.0，请添加此依赖(org.apache.http.legacy.jar)
