@@ -58,8 +58,7 @@
             android:maxLength="20"
             android:textColorHint="#cccccc"
             android:textCursorDrawable="@drawable/shape_edit"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <!--分割线-->
@@ -103,7 +102,7 @@
             android:maxLength="11"
             android:textColorHint="#cccccc"
             android:textCursorDrawable="@drawable/shape_edit"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <ImageView
             android:layout_width="48dp"

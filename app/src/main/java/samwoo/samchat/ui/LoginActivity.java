@@ -7,7 +7,11 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.PermissionChecker;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -49,6 +53,36 @@ public class LoginActivity extends BaseActivity implements ILoginView {
     public void init() {
         mTitle.setText("登录");
         loginPresenter = new LoginPresenterImpl(this);
+
+        userName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                userPassword.setText(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        userPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_DONE || ((keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER)
+                        && (keyEvent.getAction() == KeyEvent.ACTION_DOWN))) {
+                    startLogin();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
     }
 
     @OnClick({R.id.top_back, R.id.login_miss, R.id.login_btn})
@@ -61,7 +95,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
                 startLogin();
                 break;
             case R.id.login_miss:
-                startActivity(RegisterActivity.class, true);
+                startActivity(RegisterActivity.class, false);
                 break;
         }
     }

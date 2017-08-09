@@ -115,7 +115,7 @@ public class ConversationFragment extends BaseFragment implements IConversationV
 
     @Override
     public void allConversationLoaded() {
-        toast("加载完全!!");
+//        toast("加载完全!!");
         adapter.notifyDataSetChanged();
     }
 }
