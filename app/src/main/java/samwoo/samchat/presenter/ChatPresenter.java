@@ -14,4 +14,6 @@ public interface ChatPresenter {
     void sendMsg(String userName, String msg);
 
     void loadMsg(String userName);
+
+    void loadMoreMsg(String userName);
 }

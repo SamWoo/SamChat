@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
     <tab
-        icon="@drawable/ic_conversation_selected_2"
+        icon="@drawable/ic_conversation_selected_1"
         id="@+id/conversations"
         title="@string/messages" />
     <tab
-        icon="@drawable/ic_contact_selected_2"
+        icon="@drawable/ic_contact_selected_1"
         id="@+id/contacts"
         title="@string/contacts" />
     <tab
         icon="@drawable/ic_plugin_selected_2"
         id="@+id/dynamic"
         title="@string/dynamic" />
+    <tab
+        icon="@drawable/ic_settings_selected_1"
+        id="@+id/setting"
+        title="@string/setting" />
 </tabs>

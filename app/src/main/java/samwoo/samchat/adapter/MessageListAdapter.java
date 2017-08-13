@@ -2,6 +2,7 @@ package samwoo.samchat.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -42,6 +43,8 @@ public class MessageListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (position == 0 || tooClosedTimeStamp(position)) {
             showTimestamp = true;
+        } else {
+            showTimestamp = false;
         }
 
         if (holder instanceof SendMsgViewHolder) {
@@ -84,8 +87,7 @@ public class MessageListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private boolean tooClosedTimeStamp(int position) {
         long currentItemTimestamp = mList.get(position).getMsgTime();
         long preItemTimeStamp = mList.get(position - 1).getMsgTime();
-        boolean closeEnough = DateUtils.isCloseEnough(currentItemTimestamp, preItemTimeStamp);
-        return !closeEnough;
+        return !DateUtils.isCloseEnough(currentItemTimestamp, preItemTimeStamp);
     }
 
     public void addNewMsg(EMMessage message) {

@@ -6,4 +6,6 @@ package samwoo.samchat.view;
 
 public interface IChatView {
     void sendMsgSuccessed();
+
+    void loadMoreMsgSuccessed();
 }

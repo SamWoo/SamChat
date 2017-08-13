@@ -23,18 +23,19 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"
-            android:layout_margin="8dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
             android:src="@drawable/avatar_1" />
 
         <TextView
             android:id="@+id/tv_receive_msg"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@id/img_avatar"
-            android:background="@drawable/receive_msg_normal"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Hi,boy!!"
-            android:textSize="14sp" />
+            android:background="@drawable/receive_msg_bg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="Hi,boy!!" />
     </RelativeLayout>
 </LinearLayout>

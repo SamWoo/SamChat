@@ -5,5 +5,6 @@ package samwoo.samchat.common;
  */
 
 public class Constants {
-    public static final int POST_DELAY=2000;
+    public static final int POST_DELAY = 2000;
+    public static final String DATABASE_NAME = "Contacts";
 }

@@ -40,7 +40,13 @@ public class MainPresenterImpl implements MainPresenter {
     private EMMessageListener messageListener = new EMMessageListener() {
         @Override
         public void onMessageReceived(List<EMMessage> messages) {
-            mainView.updateUnreadMsgCount();
+            ThreadUtils.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mainView.updateUnreadMsgCount();
+                }
+            });
+
         }
 
         @Override

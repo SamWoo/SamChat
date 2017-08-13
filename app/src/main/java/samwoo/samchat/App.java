@@ -12,7 +12,9 @@ import com.hyphenate.chat.EMOptions;
 
 import java.util.Iterator;
 import java.util.List;
+
 import cn.bmob.v3.Bmob;
+import samwoo.samchat.database.DatabaseManager;
 
 /**
  * Created by Administrator on 2017/8/5.
@@ -22,6 +24,7 @@ public class App extends Application {
     private SoundPool mSoundPool;
     private int mSound1;
     private int mSound2;
+    public static final boolean DEBUG = true;
 
     @Override
     public void onCreate() {
@@ -29,6 +32,11 @@ public class App extends Application {
         initHuanxin();
         initBomb();
         initSoundPool();
+        initDatabase();
+    }
+
+    private void initDatabase() {
+        DatabaseManager.getInstance().init(this);
     }
 
     //初始化环信SDK

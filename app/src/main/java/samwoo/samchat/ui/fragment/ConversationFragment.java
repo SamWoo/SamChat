@@ -22,6 +22,7 @@ import samwoo.samchat.presenter.ConversationPresenter;
 import samwoo.samchat.presenter.impl.ConversationPresenterImpl;
 import samwoo.samchat.utils.ThreadUtils;
 import samwoo.samchat.view.IConversationView;
+import samwoo.samchat.widget.RecycleViewDivider;
 
 /**
  * Created by Administrator on 2017/8/7.
@@ -50,10 +51,20 @@ public class ConversationFragment extends BaseFragment implements IConversationV
 
         conversationPresenter = new ConversationPresenterImpl(this);
 
+        initRecyclerView();
+        //加载当前所有会话信息
+        conversationPresenter.loadAllConversations();
+
+        //设置信息监听器
+        EMClient.getInstance().chatManager().addMessageListener(listener);
+    }
+
+    private void initRecyclerView() {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(manager);
         adapter = new ConversationAdapter(getActivity(), conversationPresenter.getConversations());
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL, R.drawable.recycleview_divider));
         adapter.setOnItemClickListener(new ConversationAdapter.OnItemClickedListener() {
             @Override
             public void onItemClicked(View view, int position) {
@@ -61,11 +72,6 @@ public class ConversationFragment extends BaseFragment implements IConversationV
 
             }
         });
-        //加载当前所有会话信息
-        conversationPresenter.loadAllConversations();
-
-        //设置信息监听器
-        EMClient.getInstance().chatManager().addMessageListener(listener);
     }
 
     private EMMessageListener listener = new EMMessageListener() {

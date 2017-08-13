@@ -4,6 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -97,9 +98,11 @@ public class ChatActivity extends BaseActivity implements IChatView {
         @Override
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+
                 int firstVisibleItemPosition = manager.findFirstVisibleItemPosition();
                 if (firstVisibleItemPosition == 0) {
-
+//                    Log.e("Sam", "我在滚动！！！！"+firstVisibleItemPosition);
+                    chatPresenter.loadMoreMsg(userName);
                 }
             }
         }
@@ -126,6 +129,7 @@ public class ChatActivity extends BaseActivity implements IChatView {
         @Override
         public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
             if (i == EditorInfo.IME_ACTION_SEND) {
+                sendMsg();
                 return true;
             }
             return false;
@@ -169,7 +173,13 @@ public class ChatActivity extends BaseActivity implements IChatView {
 
     @Override
     public void sendMsgSuccessed() {
-//        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();
         mChatRecyclerView.smoothScrollToPosition(adapter.getItemCount() - 1);
+    }
+
+    @Override
+    public void loadMoreMsgSuccessed() {
+        adapter.notifyDataSetChanged();
+        toast("加载更多消息完成!!");
     }
 }

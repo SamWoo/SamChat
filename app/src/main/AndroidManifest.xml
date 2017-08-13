@@ -69,6 +69,12 @@
         <!--聊天界面-->
         <activity
             android:name=".ui.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--添加联系人界面-->
+        <activity
+            android:name=".ui.AddContactActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

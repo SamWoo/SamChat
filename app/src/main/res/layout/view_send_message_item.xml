@@ -23,19 +23,20 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
-            android:layout_margin="8dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp"
             android:src="@drawable/avatar_2" />
 
         <TextView
             android:id="@+id/tv_send_msg"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/img_avatar"
-            android:background="@drawable/send_msg_normal"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Hi,girl!!"
-            android:textSize="14sp" />
+            android:background="@drawable/send_msg_bg"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="Hi,girl!!" />
 
         <ImageView
             android:id="@+id/img_msg_progress"
