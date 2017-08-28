@@ -23,14 +23,32 @@ public class LoginPresenterImpl implements LoginPresenter {
 
     @Override
     public void login(String userName, String userPwd) {
+        ThreadUtils.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                loginView.onLogining();
+            }
+        });
+
         if (RegexUtils.checkName(userName)) {
             if (RegexUtils.checkPassword(userPwd)) {
                 EMClient.getInstance().login(userName, userPwd, emCallBack);
             } else {
-                loginView.userPassWdError();
+                ThreadUtils.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        loginView.userPassWdError();
+                    }
+                });
             }
         } else {
-            loginView.userNameError();
+            ThreadUtils.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    loginView.userNameError();
+                }
+            });
+
         }
     }
 
@@ -57,12 +75,6 @@ public class LoginPresenterImpl implements LoginPresenter {
 
         @Override
         public void onProgress(int progress, String status) {
-            ThreadUtils.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    loginView.onLogining();
-                }
-            });
         }
     };
 }

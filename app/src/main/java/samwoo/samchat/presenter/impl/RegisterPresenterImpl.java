@@ -28,7 +28,13 @@ public class RegisterPresenterImpl implements RegisterPresenter {
             if (RegexUtils.checkPassword(passwd)) {
                 if (passwd.equals(confirmPwd)) {
                     registerBmob(name, passwd);
-                    registerView.onRegistering();
+
+                    ThreadUtils.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            registerView.onRegistering();
+                        }
+                    });
                 } else {
                     registerView.confiredPwdError();
                 }
@@ -41,15 +47,26 @@ public class RegisterPresenterImpl implements RegisterPresenter {
 
     }
 
+    /**
+     * 注册信息到Bmob云端
+     * @param userName
+     * @param pwd
+     */
     private void registerBmob(final String userName, final String pwd) {
         User user = new User(userName, pwd);
         user.save(new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {
                 if (e == null) {
+                    //Bmob端注册成功再在环信上注册信息
                     registerEaseMob(userName, pwd);
                 } else {
-                    registerView.registerExist();
+                    ThreadUtils.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            registerView.registerExist();
+                        }
+                    });
                 }
             }
         });

@@ -138,11 +138,13 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
     @Override
     public void userNameError() {
+        hideProgress();
         toast("非法用户名！！");
     }
 
     @Override
     public void userPassWdError() {
+        hideProgress();
         toast("密码格式错误！！");
     }
 

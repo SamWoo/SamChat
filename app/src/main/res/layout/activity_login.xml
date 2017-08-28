@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4f4f4"
+    android:background="#E8E8E8"
     android:orientation="vertical"
     tools:context=".ui.LoginActivity">
 
@@ -15,15 +15,15 @@
         android:layout_height="64dp"
         android:layout_gravity="center"
         android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/avatar" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/avatar_1" />
     <!--分割线-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@color/colorF0" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:background="@color/colorF0" />-->
 
     <!--输入手机号码-->
     <LinearLayout
