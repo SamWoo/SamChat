@@ -11,6 +11,7 @@ import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
@@ -53,6 +54,13 @@ public class MainActivity extends BaseActivity implements IMainView {
         @Override
         public void onTabSelected(int tabId) {
             fm.beginTransaction().replace(R.id.fragment_container, FragmentFactory.getInstance().getFragment(tabId)).commit();
+            switch (tabId) {
+                case R.id.conversations:
+//                    EMClient.getInstance().
+                    break;
+                default:
+                    break;
+            }
         }
     };
 

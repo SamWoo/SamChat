@@ -228,7 +228,7 @@ public class ContactFragment extends BaseFragment implements IContactView {
     public void getContactsSuccessed() {
         adapter.notifyDataSetChanged();
         mSwipeRefreshLayout.setRefreshing(false);
-        toast("获取联系人完成!!");
+//        toast("获取联系人完成!!");
     }
 
     @Override

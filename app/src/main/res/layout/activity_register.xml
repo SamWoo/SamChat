@@ -15,15 +15,15 @@
         android:layout_height="64dp"
         android:layout_gravity="center"
         android:layout_marginBottom="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/avatar_2" />
     <!--分割线-->
     <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:background="@color/colorF0" />-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginRight="8dp"-->
+    <!--android:background="@color/colorF0" />-->
 
     <!--输入手机号码-->
     <LinearLayout
@@ -168,12 +168,13 @@
         android:id="@+id/register_btn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_button_red"
         android:gravity="center"
-        android:text="注册"
+        android:text="注 册"
         android:textColor="@color/colorWhite"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 </LinearLayout>

@@ -114,13 +114,11 @@ public class ChatPresenterImpl implements ChatPresenter {
 
         @Override
         public void onError(int code, String error) {
-
             //发送失败
         }
 
         @Override
         public void onProgress(int progress, String status) {
-
             //正在发送
         }
     };

@@ -69,7 +69,6 @@ public class ConversationFragment extends BaseFragment implements IConversationV
             @Override
             public void onItemClicked(View view, int position) {
                 //跳转到聊天界面
-
             }
         });
     }
@@ -80,7 +79,7 @@ public class ConversationFragment extends BaseFragment implements IConversationV
             ThreadUtils.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    toast("有一条新消息!!");
+//                    toast("有一条新消息!!");
                     conversationPresenter.loadAllConversations();
                 }
             });

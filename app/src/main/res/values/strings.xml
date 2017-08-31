@@ -21,4 +21,5 @@
     <string name="setting">设置</string>
     <string name="send">发送</string>
     <string name="button_pushtotalk">按住说</string>
+    <string name="new_msg">收到新消息</string>
 </resources>

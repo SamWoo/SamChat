@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
 
 import java.util.List;
@@ -98,7 +99,6 @@ public class ChatActivity extends BaseActivity implements IChatView {
         @Override
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-
                 int firstVisibleItemPosition = manager.findFirstVisibleItemPosition();
                 if (firstVisibleItemPosition == 0) {
 //                    Log.e("Sam", "我在滚动！！！！"+firstVisibleItemPosition);
@@ -145,6 +145,9 @@ public class ChatActivity extends BaseActivity implements IChatView {
                     final EMMessage msg = messages.get(0);
                     if (msg.getUserName().equals(userName)) {
                         adapter.addNewMsg(msg);
+                        //清空当前聊天对象的未读信息数
+                        EMConversation conversation = EMClient.getInstance().chatManager().getConversation(userName);
+                        conversation.markAllMessagesAsRead();
                     }
                 }
             });
@@ -180,6 +183,6 @@ public class ChatActivity extends BaseActivity implements IChatView {
     @Override
     public void loadMoreMsgSuccessed() {
         adapter.notifyDataSetChanged();
-        toast("加载更多消息完成!!");
+//        toast("加载更多消息完成!!");
     }
 }
