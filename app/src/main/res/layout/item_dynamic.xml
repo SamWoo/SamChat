@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/image_friend"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        android:src="@drawable/avatar_1" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_friend_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Simmon"
+                android:textColor="@color/chat_blue"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_friend_dynamic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_friend_name"
+                android:layout_marginTop="4dp"
+                android:text="我是来测试的.....我是来测试的.....我是来测试的.....\n
+我是来测试的.....我是来测试的.....我是来测试的.....\n
+我是来测试的.....我是来测试的.....我是来测试的.....\n
+我是来测试的.....我是来测试的.....我是来测试的.....\n
+我是来测试的.....我是来测试的.....我是来测试的.....\n
+我是来测试的.....我是来测试的.....我是来测试的.....\n"
+                android:textColor="#ff000000"
+                android:textSize="14sp" />
+
+            <samwoo.samchat.widget.MultiImageView
+                android:id="@+id/multi_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_friend_dynamic"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="4dp"></samwoo.samchat.widget.MultiImageView>
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/multi_image"
+                android:text="评论区............"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="24sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -12,6 +12,7 @@ public class FragmentFactory {
     private BaseFragment mConversationFragment;
     private BaseFragment mContactFragment;
     private BaseFragment mDynamicFragment;
+    private BaseFragment mSettingFragment;
 
     //单例模式
     public static FragmentFactory getInstance() {
@@ -33,6 +34,8 @@ public class FragmentFactory {
                 return getContactFragment();
             case R.id.dynamic:
                 return getDynamicFragment();
+            case R.id.setting:
+                return getSettingFragment();
         }
         return null;
     }
@@ -56,5 +59,12 @@ public class FragmentFactory {
             mDynamicFragment = new DynamicFragment();
         }
         return mDynamicFragment;
+    }
+
+    private BaseFragment getSettingFragment() {
+        if (mSettingFragment == null) {
+            mSettingFragment = new SettingFragment();
+        }
+        return mSettingFragment;
     }
 }

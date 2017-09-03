@@ -86,6 +86,7 @@ public class ContactFragment extends BaseFragment implements IContactView {
 
     private void initRecycleView() {
         mRecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+        //setHasFixedSize 的作用就是确保尺寸是通过用户输入从而确保RecyclerView的尺寸是一个常数。RecyclerView 的Item宽或者高不会变。
         mRecycleView.setHasFixedSize(true);
         adapter = new ContactAdapter(getContext(), contactPresenter.getContactsList());
         if (App.DEBUG) {
@@ -93,7 +94,7 @@ public class ContactFragment extends BaseFragment implements IContactView {
         }
         adapter.setOnItemClicked(onItemClickedListener);
         mRecycleView.setAdapter(adapter);
-        mRecycleView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.VERTICAL, R.drawable.recycleview_divider));
+        mRecycleView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider));
     }
 
     @OnClick(R.id.add)
