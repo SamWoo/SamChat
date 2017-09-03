@@ -16,11 +16,14 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.chat.EMTextMessageBody;
+import com.zhy.autolayout.config.AutoLayoutConifg;
 
 import java.io.File;
 import java.util.Iterator;
@@ -45,11 +48,21 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initConfig();
         initHuanxin();
         initBomb();
         initSoundPool();
         initDatabase();
         EMClient.getInstance().chatManager().addMessageListener(msgListener);
+    }
+
+    private void initConfig() {
+        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this)
+                .setDownsampleEnabled(true)
+                .build();
+
+        Fresco.initialize(this, config);
+        AutoLayoutConifg.getInstance().useDeviceSize();
     }
 
     //初始化 Database

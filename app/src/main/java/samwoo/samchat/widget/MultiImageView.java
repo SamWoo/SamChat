@@ -28,7 +28,7 @@ import samwoo.samchat.R;
  * Created by Administrator on 2017/9/3.
  */
 
-public class MultiImageView extends LinearLayout{
+public class MultiImageView extends LinearLayout {
     public static int MAX_WIDTH = 0;
     private Context mContext;
     private ImageView mImageViewcache;
@@ -62,21 +62,6 @@ public class MultiImageView extends LinearLayout{
     public MultiImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-    }
-
-    public void setList(List<String> lists) throws IllegalArgumentException {
-        if (lists == null) {
-            throw new IllegalArgumentException("imageList is null...");
-        }
-        imagesList = lists;
-
-        if (MAX_WIDTH > 0) {
-            pxMoreWandH = (MAX_WIDTH - pxImagePadding * 2) / 3; //解决右侧图片和内容对不齐问题
-            pxOneMaxWandH = MAX_WIDTH * 2 / 3;
-            initImageLayoutParams();
-        }
-
-        initView();
     }
 
     @Override
@@ -118,6 +103,21 @@ public class MultiImageView extends LinearLayout{
             }
         }
         return result;
+    }
+
+    public void setList(List<String> lists) throws IllegalArgumentException {
+        if (lists == null) {
+            throw new IllegalArgumentException("imageList is null...");
+        }
+        imagesList = lists;
+
+        if (MAX_WIDTH > 0) {
+            pxMoreWandH = (MAX_WIDTH - pxImagePadding * 2) / 3; //解决右侧图片和内容对不齐问题
+            pxOneMaxWandH = MAX_WIDTH * 2 / 3;
+            initImageLayoutParams();
+        }
+
+        initView();
     }
 
     private void initImageLayoutParams() {
@@ -211,7 +211,7 @@ public class MultiImageView extends LinearLayout{
         final float[] PressX = new float[1];
         final float[] PressY = new float[1];
         String url = imagesList.get(position);
-        mImageView.setOnTouchListener(new View.OnTouchListener() {
+        mImageView.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
     android:orientation="horizontal">
 
     <ImageView
@@ -12,59 +15,219 @@
         android:layout_margin="8dp"
         android:src="@drawable/avatar_1" />
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/tv_friend_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Simmon"
+            android:textColor="@color/chat_blue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_friend_dynamic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_below="@id/tv_friend_name"
+            android:layout_marginTop="4dp"
+            android:text="我是来测试的.....我是来测试的.....我是来测试的.....\n"
+            android:textColor="#ff000000"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tv_friend_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Simmon"
-                android:textColor="@color/chat_blue"
-                android:textSize="18sp" />
+        <samwoo.samchat.widget.MultiImageView
+            android:id="@+id/multi_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_friend_dynamic"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="4dp"></samwoo.samchat.widget.MultiImageView>
 
-            <TextView
-                android:id="@+id/tv_friend_dynamic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_friend_name"
-                android:layout_marginTop="4dp"
-                android:text="我是来测试的.....我是来测试的.....我是来测试的.....\n
-我是来测试的.....我是来测试的.....我是来测试的.....\n
-我是来测试的.....我是来测试的.....我是来测试的.....\n
-我是来测试的.....我是来测试的.....我是来测试的.....\n
-我是来测试的.....我是来测试的.....我是来测试的.....\n
-我是来测试的.....我是来测试的.....我是来测试的.....\n"
-                android:textColor="#ff000000"
-                android:textSize="14sp" />
+        <!--评论的头像-->
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/comment_friends"
+            android:layout_width="match_parent"
+            android:layout_height="84px"
+            android:layout_below="@id/multi_image"
+            android:layout_marginLeft="2px"
+            android:layout_marginRight="24px"
+            android:layout_marginTop="12px"
+            android:gravity="center_vertical">
 
-            <samwoo.samchat.widget.MultiImageView
-                android:id="@+id/multi_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_friend_dynamic"
-                android:layout_marginRight="12dp"
-                android:layout_marginTop="4dp"></samwoo.samchat.widget.MultiImageView>
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                fresco:placeholderImage="@drawable/jx_user1"
+                fresco:roundAsCircle="true" />
 
-            <TextView
-                android:id="@+id/tv_comment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/multi_image"
-                android:text="评论区............"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="24sp" />
-        </RelativeLayout>
-    </FrameLayout>
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user2"
+                fresco:roundAsCircle="true" />
 
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user3"
+                fresco:roundAsCircle="true" />
 
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user4"
+                fresco:roundAsCircle="true" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user5"
+                fresco:roundAsCircle="true" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user6"
+                fresco:roundAsCircle="true" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="84px"
+                android:layout_height="84px"
+                android:layout_marginLeft="22px"
+                fresco:placeholderImage="@drawable/jx_user7"
+                fresco:roundAsCircle="true" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <!--用户操作-->
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/friends_action"
+            android:layout_width="match_parent"
+            android:layout_height="74px"
+            android:layout_below="@id/comment_friends"
+            android:layout_marginLeft="2px"
+            android:layout_marginRight="24px"
+            android:layout_marginTop="16px"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
+
+            <!--赞-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="190px"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_comment_action"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="48px"
+                    android:layout_height="42px"
+                    android:layout_marginLeft="30px"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/share_praise_grey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16px"
+                    android:text="赞"
+                    android:textColor="#999999"
+                    android:textSize="38px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <!--送礼-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="190px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="28px"
+                android:background="@drawable/shape_comment_action"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="40px"
+                    android:layout_height="48px"
+                    android:layout_marginLeft="30px"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/share_gift_grey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16px"
+                    android:text="送礼"
+                    android:textColor="#999999"
+                    android:textSize="38px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <!--评论-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="190px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="28px"
+                android:background="@drawable/shape_comment_action"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="46px"
+                    android:layout_height="42px"
+                    android:layout_marginLeft="30px"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/share_comment" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16px"
+                    android:text="评论"
+                    android:textColor="#999999"
+                    android:textSize="38px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <!--分享-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="190px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="28px"
+                android:background="@drawable/shape_comment_action"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="40px"
+                    android:layout_height="48px"
+                    android:layout_marginLeft="30px"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/share_shareto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16px"
+                    android:text="分享"
+                    android:textColor="#999999"
+                    android:textSize="38px" />
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/friends_action"
+            android:layout_marginTop="4dp"
+            android:text="评论区............"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="24sp" />
+    </RelativeLayout>
 </LinearLayout>

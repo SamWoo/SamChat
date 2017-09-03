@@ -51,10 +51,10 @@ public class DynamicFragment extends BaseFragment {
             "http://b.hiphotos.baidu.com/image/pic/item/a71ea8d3fd1f4134e61e0f90211f95cad1c85e36.jpg",
             "http://c.hiphotos.baidu.com/image/pic/item/7dd98d1001e939011b9c86d07fec54e737d19645.jpg",
             "http://f.hiphotos.baidu.com/image/pic/item/f11f3a292df5e0fecc3e83ef586034a85edf723d.jpg",
-            "http://pica.nipic.com/2007-10-17/20071017111345564_2.jpg",
-            "http://pic4.nipic.com/20091101/3672704_160309066949_2.jpg",
-            "http://pic4.nipic.com/20091203/1295091_123813163959_2.jpg",
-            "http://pic2.ooopic.com/11/79/98/31bOOOPICb1_1024.jpg"
+            "http://pica.nipic.com/2007-10-17/20071017111345564_2.jpg"
+//            "http://pic4.nipic.com/20091101/3672704_160309066949_2.jpg",
+//            "http://pic4.nipic.com/20091203/1295091_123813163959_2.jpg",
+//            "http://pic2.ooopic.com/11/79/98/31bOOOPICb1_1024.jpg"
     };
 
     @Override
@@ -67,9 +67,9 @@ public class DynamicFragment extends BaseFragment {
         mBack.setVisibility(View.GONE);
         mTitle.setText("动态");
         initData();
-        initListview();
-//        initRecycleView();
-//        initSwipeRefresh();
+//        initListview();
+        initRecycleView();
+        initSwipeRefresh();
     }
 
     private void initListview() {
@@ -100,21 +100,24 @@ public class DynamicFragment extends BaseFragment {
      * 测试用例数据源
      */
     private void initData() {
+        modelList.clear();
+        list.clear();
+        DynamicItemModel model;
+        //装载图片path
         for (int i = 0; i < PHOTOS.length; i++) {
             list.add(PHOTOS[i]);
         }
-        modelList.clear();
-        DynamicItemModel model;
-        for (int i = 0; i < 5; i++) {
+        //设置测试用数据源
+        for (int i = 0; i < 3; i++) {
             model = new DynamicItemModel();
             if (i % 2 == 0) {
                 model.setAvatarId(R.drawable.avatar_1);
                 model.setName("Helen");
-//                model.setDynamicText("Hi, boy! Can I help you?");
+                model.setDynamicText("Hi, boy! Can I help you?");
             } else {
                 model.setAvatarId(R.drawable.avatar_2);
                 model.setName("Bob");
-//                model.setDynamicText("Hi, Girl! Nice to meet you!!");
+                model.setDynamicText("Hi, Girl! Nice to meet you!!");
             }
             model.setImages(list);
             modelList.add(model);

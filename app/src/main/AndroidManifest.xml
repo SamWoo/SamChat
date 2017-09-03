@@ -37,6 +37,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--屏幕框架适配-->
+        <meta-data
+            android:name="design_width"
+            android:value="1440" />
+        <meta-data
+            android:name="design_height"
+            android:value="2560" />
+
         <!-- 启动页 -->
         <activity
             android:name=".ui.SplashActivity"

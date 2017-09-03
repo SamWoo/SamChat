@@ -68,6 +68,10 @@ dependencies {
     compile 'com.orhanobut:logger:2.1.1'
     //support glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    //support facebook
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    //support zhy-autoLayout
+    compile 'com.zhy:autolayout:1.4.5'
 
     //support bomb
     //    compile 'cn.bmob.android:bmob-sdk:3.5.5'

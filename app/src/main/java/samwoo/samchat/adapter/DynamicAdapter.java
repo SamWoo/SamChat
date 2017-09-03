@@ -61,7 +61,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.multiImageView.setList(modelList.get(position).getImages());
         Glide.with(context).load(modelList.get(position).getAvatarId()).into(holder.imageView);
-//        holder.tv_dynamic.setText(modelList.get(position).getDynamicText());
+        holder.tv_dynamic.setText(modelList.get(position).getDynamicText());
         holder.tv_name.setText(modelList.get(position).getName());
         holder.tv_comment.setText("评论区........");
 
