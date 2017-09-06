@@ -12,7 +12,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -25,7 +24,6 @@ import com.hyphenate.chat.EMOptions;
 import com.hyphenate.chat.EMTextMessageBody;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
-import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 
@@ -43,7 +41,7 @@ public class App extends Application {
     private SoundPool mSoundPool;
     private int mSound1;
     private int mSound2;
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false;
 
     @Override
     public void onCreate() {

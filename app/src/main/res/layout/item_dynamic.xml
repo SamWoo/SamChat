@@ -120,104 +120,39 @@
             android:background="@color/colorWhite"
             android:orientation="horizontal">
 
-            <!--赞-->
-            <com.zhy.autolayout.AutoLinearLayout
+            <samwoo.samchat.widget.PraiseView
+                android:id="@+id/id_praise"
                 android:layout_width="190px"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_comment_action"
-                android:gravity="center_vertical">
+                android:layout_marginLeft="2px"
+                android:clickable="true"
+                app:image="@drawable/share_praise_grey"
+                app:text="赞"></samwoo.samchat.widget.PraiseView>
 
-                <ImageView
-                    android:layout_width="48px"
-                    android:layout_height="42px"
-                    android:layout_marginLeft="30px"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/share_praise_grey" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16px"
-                    android:text="赞"
-                    android:textColor="#999999"
-                    android:textSize="38px" />
-            </com.zhy.autolayout.AutoLinearLayout>
-
-            <!--送礼-->
-            <com.zhy.autolayout.AutoLinearLayout
+            <samwoo.samchat.widget.PraiseView
+                android:id="@+id/id_gift"
                 android:layout_width="190px"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="28px"
-                android:background="@drawable/shape_comment_action"
-                android:gravity="center_vertical">
+                app:image="@drawable/share_gift_grey"
+                app:text="送礼"></samwoo.samchat.widget.PraiseView>
 
-                <ImageView
-                    android:layout_width="40px"
-                    android:layout_height="48px"
-                    android:layout_marginLeft="30px"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/share_gift_grey" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16px"
-                    android:text="送礼"
-                    android:textColor="#999999"
-                    android:textSize="38px" />
-            </com.zhy.autolayout.AutoLinearLayout>
-
-            <!--评论-->
-            <com.zhy.autolayout.AutoLinearLayout
+            <samwoo.samchat.widget.PraiseView
+                android:id="@+id/id_comment"
                 android:layout_width="190px"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="28px"
-                android:background="@drawable/shape_comment_action"
-                android:gravity="center_vertical">
+                app:image="@drawable/share_comment"
+                app:text="评论"></samwoo.samchat.widget.PraiseView>
 
-                <ImageView
-                    android:layout_width="46px"
-                    android:layout_height="42px"
-                    android:layout_marginLeft="30px"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/share_comment" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16px"
-                    android:text="评论"
-                    android:textColor="#999999"
-                    android:textSize="38px" />
-            </com.zhy.autolayout.AutoLinearLayout>
-
-            <!--分享-->
-            <com.zhy.autolayout.AutoLinearLayout
+            <samwoo.samchat.widget.PraiseView
+                android:id="@+id/id_shareto"
                 android:layout_width="190px"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="28px"
-                android:background="@drawable/shape_comment_action"
-                android:gravity="center_vertical">
+                app:image="@drawable/share_shareto"
+                app:text="分享"></samwoo.samchat.widget.PraiseView>
 
-                <ImageView
-                    android:layout_width="40px"
-                    android:layout_height="48px"
-                    android:layout_marginLeft="30px"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/share_shareto" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16px"
-                    android:text="分享"
-                    android:textColor="#999999"
-                    android:textSize="38px" />
-            </com.zhy.autolayout.AutoLinearLayout>
         </com.zhy.autolayout.AutoLinearLayout>
 
         <TextView

@@ -2,6 +2,7 @@ package samwoo.samchat.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import butterknife.ButterKnife;
 import samwoo.samchat.R;
 import samwoo.samchat.model.DynamicItemModel;
 import samwoo.samchat.widget.MultiImageView;
+import samwoo.samchat.widget.PraiseView;
 
 /**
  * Created by Administrator on 2017/9/2.
@@ -27,6 +29,7 @@ import samwoo.samchat.widget.MultiImageView;
 public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHolder> {
     private Context context;
     private List<DynamicItemModel> modelList = new ArrayList<DynamicItemModel>();
+    private int praiseCount = 0;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.image_friend)
@@ -39,6 +42,8 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
         MultiImageView multiImageView;
         @BindView(R.id.tv_comment)
         TextView tv_comment;
+        @BindView(R.id.id_praise)
+        PraiseView mPraise;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -60,6 +65,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.multiImageView.setList(modelList.get(position).getImages());
+//        Log.e("Sam", "position=====" + position + "\ncount=====" + modelList.get(position).getImages().size());
         Glide.with(context).load(modelList.get(position).getAvatarId()).into(holder.imageView);
         holder.tv_dynamic.setText(modelList.get(position).getDynamicText());
         holder.tv_name.setText(modelList.get(position).getName());
@@ -74,6 +80,16 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
             @Override
             public void onItemLongClick(View view, int position, float PressX, float PressY) {
 
+            }
+        });
+
+        holder.mPraise.setOnViewClickListener(new PraiseView.OnViewClickListener() {
+            @Override
+            public void onViewClick(View view) {
+                praiseCount++;
+                int resId = (praiseCount % 2 == 0) ? R.drawable.share_praise_grey : R.drawable.share_praise_red;
+                holder.mPraise.setIcon(resId);
+                Log.e("Sam","PraiseCount=="+praiseCount+"\n resID==="+resId);
             }
         });
     }

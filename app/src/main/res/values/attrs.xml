@@ -4,7 +4,12 @@
         <attr name="numColumns" format="integer" />
     </declare-styleable>
     <declare-styleable name="EaseEmojiconMenu">
-        <attr name="bigEmojiconRows" format="integer"/>
-        <attr name="emojiconColumns" format="integer"/>
+        <attr name="bigEmojiconRows" format="integer" />
+        <attr name="emojiconColumns" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PraiseView">
+        <attr name="Id" format="integer" />
+        <attr name="image" format="reference" />
+        <attr name="text" format="string" />
     </declare-styleable>
 </resources>
