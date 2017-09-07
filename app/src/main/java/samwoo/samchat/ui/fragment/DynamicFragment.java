@@ -4,23 +4,21 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import samwoo.samchat.App;
 import samwoo.samchat.R;
-import samwoo.samchat.adapter.ContactAdapter;
 import samwoo.samchat.adapter.DynamicAdapter;
-import samwoo.samchat.adapter.DynamicListAdapter;
 import samwoo.samchat.base.BaseFragment;
 import samwoo.samchat.model.DynamicItemModel;
 import samwoo.samchat.widget.RecycleViewDivider;
@@ -38,13 +36,15 @@ public class DynamicFragment extends BaseFragment {
     RecyclerView recyclerView;
     @BindView(R.id.layout_swipeRefresh)
     SwipeRefreshLayout swipeRefreshLayout;
-    @BindView(R.id.listview_dynamic)
-    ListView listView;
+//    @BindView(R.id.img_bg_head)
+//    ImageView bgHead;
+//    @BindView(R.id.img_head)
+//    ImageView mHead;
 
     public static final String TAG = "DynamicFragement";
     private List<DynamicItemModel> modelList = new ArrayList<DynamicItemModel>();
-    //    private List<String> list = new ArrayList<String>();
     private DynamicAdapter adapter;
+    private View headerView;
 
     public static final String[] PHOTOS = {
             "http://f.hiphotos.baidu.com/image/pic/item/faf2b2119313b07e97f760d908d7912396dd8c9c.jpg",
@@ -70,16 +70,14 @@ public class DynamicFragment extends BaseFragment {
         mBack.setVisibility(View.GONE);
         mTitle.setText("动态");
         initData();
-//        initListview();
+        initHeadView();
         initRecycleView();
         initSwipeRefresh();
     }
 
-    private void initListview() {
-        DynamicListAdapter listAdapter = new DynamicListAdapter(getContext(), modelList);
-        listView.setAdapter(listAdapter);
-    }
+    private void initHeadView() {
 
+    }
 
     private void initSwipeRefresh() {
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.btn_blue_normal), getResources().getColor(R.color.colorRed));
@@ -99,6 +97,9 @@ public class DynamicFragment extends BaseFragment {
                 }
             }
         }
+        //headerView必须在RecyclerView设置manager后进行视图填充
+        headerView = LayoutInflater.from(getContext()).inflate(R.layout.layout_head, recyclerView, false);
+        adapter.setHeaderView(headerView);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider));
     }
@@ -108,7 +109,6 @@ public class DynamicFragment extends BaseFragment {
      */
     private void initData() {
         modelList.clear();
-//        list.clear();
         DynamicItemModel model;
         List<String> list;
         //装载图片path

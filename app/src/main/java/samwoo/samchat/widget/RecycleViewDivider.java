@@ -18,7 +18,7 @@ import android.view.View;
 public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     private Paint mPaint;
     private Drawable mDivider;
-    private int mDividerHeight = 2;//分割线高度，默认为1px
+    private int mDividerHeight = 1;//分割线高度，默认为1px
     private int mOrientation;//列表的方向：LinearLayoutManager.VERTICAL或LinearLayoutManager.HORIZONTAL
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
 
@@ -73,6 +73,12 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
+        //获取子视图的位置，若是第一个就不显示下划分割线
+        int childAdapterPosition = parent.getChildAdapterPosition(view);
+        if (childAdapterPosition == 0) {
+            outRect.set(0, 0, 0, 0);
+            return;
+        }
         outRect.set(0, 0, 0, mDividerHeight);
     }
 
