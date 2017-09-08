@@ -70,7 +70,6 @@ public class DynamicFragment extends BaseFragment {
         mBack.setVisibility(View.GONE);
         mTitle.setText("动态");
         initData();
-        initHeadView();
         initRecycleView();
         initSwipeRefresh();
     }
