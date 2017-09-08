@@ -100,7 +100,7 @@ public class DynamicFragment extends BaseFragment {
         headerView = LayoutInflater.from(getContext()).inflate(R.layout.layout_head, recyclerView, false);
         adapter.setHeaderView(headerView);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider));
+        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider，true));
     }
 
     /**
