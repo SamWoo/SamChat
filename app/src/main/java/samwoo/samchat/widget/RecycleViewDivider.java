@@ -21,6 +21,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     private int mDividerHeight = 1;//分割线高度，默认为1px
     private int mOrientation;//列表的方向：LinearLayoutManager.VERTICAL或LinearLayoutManager.HORIZONTAL
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
+    private boolean hasHeaderView=false;
 
     /**
      * 默认分割线：高度为2px，颜色为灰色
@@ -51,6 +52,16 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         mDivider = ContextCompat.getDrawable(context, drawableId);
         mDividerHeight = mDivider.getIntrinsicHeight();
     }
+    
+    /**
+    *判断是否有HeaderView视图
+    */
+    public RecycleViewDivider(Context context, int orientation, int drawableId, boolean hasHeaderView) {
+        this(context, orientation);
+        this.hasHeaderView=hasHeaderView;
+        mDivider = ContextCompat.getDrawable(context, drawableId);
+        mDividerHeight = mDivider.getIntrinsicHeight();
+    }
 
     /**
      * 自定义分割线
@@ -75,7 +86,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         super.getItemOffsets(outRect, view, parent, state);
         //获取子视图的位置，若是第一个就不显示下划分割线
         int childAdapterPosition = parent.getChildAdapterPosition(view);
-        if (childAdapterPosition == 0) {
+        if (childAdapterPosition == 0&& hasHeaderView) {
             outRect.set(0, 0, 0, 0);
             return;
         }
