@@ -16,16 +16,16 @@ import samwoo.samchat.widget.MultiImageView;
  */
 
 public class SettingFragment extends BaseFragment {
-    @BindView(R.id.image_friend)
-    ImageView imageView;
-    @BindView(R.id.tv_friend_dynamic)
-    TextView tv_dynamic;
-    @BindView(R.id.tv_friend_name)
-    TextView tv_name;
-    @BindView(R.id.multi_image)
-    MultiImageView multiImageView;
-    @BindView(R.id.tv_comment)
-    TextView tv_comment;
+//    @BindView(R.id.image_friend)
+//    ImageView imageView;
+//    @BindView(R.id.tv_friend_dynamic)
+//    TextView tv_dynamic;
+//    @BindView(R.id.tv_friend_name)
+//    TextView tv_name;
+//    @BindView(R.id.multi_image)
+//    MultiImageView multiImageView;
+//    @BindView(R.id.tv_comment)
+//    TextView tv_comment;
 
     public static final String[] PHOTOS = {
             "http://f.hiphotos.baidu.com/image/pic/item/faf2b2119313b07e97f760d908d7912396dd8c9c.jpg",
@@ -48,16 +48,16 @@ public class SettingFragment extends BaseFragment {
 
     @Override
     public int getResLayout() {
-        return R.layout.item_dynamic;
+        return R.layout.framgent_discovery;
     }
 
     @Override
     public void init() {
-        mList.clear();
-        for (int i = 0; i < PHOTOS.length; i++) {
-            mList.add(PHOTOS[i]);
-        }
-
-        multiImageView.setList(mList);
+//        mList.clear();
+//        for (int i = 0; i < PHOTOS.length; i++) {
+//            mList.add(PHOTOS[i]);
+//        }
+//
+//        multiImageView.setList(mList);
     }
 }

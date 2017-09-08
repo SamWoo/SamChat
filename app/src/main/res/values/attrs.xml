@@ -12,4 +12,9 @@
         <attr name="image" format="reference" />
         <attr name="text" format="string" />
     </declare-styleable>
+    <declare-styleable name="DiscoveryView">
+        <attr name="leftIcon" format="reference" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="Text" format="string" />
+    </declare-styleable>
 </resources>

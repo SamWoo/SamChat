@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
     <include layout="@layout/layout_toolbar" />
-    <!--<include layout="@layout/layout_head"/>-->
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/layout_swipeRefresh"
@@ -19,6 +18,5 @@
 
         </android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
-
 
 </LinearLayout>

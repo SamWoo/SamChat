@@ -74,10 +74,6 @@ public class DynamicFragment extends BaseFragment {
         initSwipeRefresh();
     }
 
-    private void initHeadView() {
-
-    }
-
     private void initSwipeRefresh() {
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.btn_blue_normal), getResources().getColor(R.color.colorRed));
         swipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
@@ -100,7 +96,7 @@ public class DynamicFragment extends BaseFragment {
         headerView = LayoutInflater.from(getContext()).inflate(R.layout.layout_head, recyclerView, false);
         adapter.setHeaderView(headerView);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider，true));
+        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider,true));
     }
 
     /**

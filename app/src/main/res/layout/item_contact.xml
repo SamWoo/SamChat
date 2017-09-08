@@ -29,6 +29,8 @@
                 android:layout_height="48dp"
                 android:layout_centerVertical="true"
                 android:layout_margin="8dp"
+                android:background="@drawable/bg_header"
+                android:padding="1dp"
                 android:src="@drawable/avatar_1" />
 
             <TextView

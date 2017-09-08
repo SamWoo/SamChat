@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="250dp"
     android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/img_bg_head"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="210dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_head" />
 
@@ -18,8 +18,22 @@
         android:layout_height="72dp"
         android:layout_alignBottom="@id/img_bg_head"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="-20dp"
+        android:layout_marginBottom="-30dp"
         android:layout_marginRight="24dp"
+        android:background="@drawable/bg_header"
+        android:padding="1dp"
         android:src="@drawable/avatar_1" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_bg_head"
+        android:paddingRight="12dp"
+        android:layout_toLeftOf="@id/img_head"
+        android:text="Sam"
+        android:textSize="16sp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="8dp"/>
 
 </RelativeLayout>
