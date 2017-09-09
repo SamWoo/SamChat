@@ -8,87 +8,98 @@
 
     <include layout="@layout/layout_toolbar" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/friend_circle"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:Text="朋友圈"
-        app:leftIcon="@drawable/v2"
-        app:rightIcon="@drawable/avatar_1"></samwoo.samchat.widget.DiscoveryView>
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_scan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:Text="扫一扫"
-        app:leftIcon="@drawable/icon_de_saoyisao" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@android:color/darker_gray" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/friend_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:Text="朋友圈"
+                app:leftIcon="@drawable/v2"
+                app:rightIcon="@drawable/avatar_1"></samwoo.samchat.widget.DiscoveryView>
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_shake"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:Text="摇一摇"
-        app:leftIcon="@drawable/icon_de_yao" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_scan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                app:Text="扫一扫"
+                app:leftIcon="@drawable/icon_de_saoyisao" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_nearby"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:Text="附近的人"
-        app:leftIcon="@drawable/icon_de_nearby" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_shake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                app:Text="摇一摇"
+                app:leftIcon="@drawable/icon_de_yao" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@android:color/darker_gray" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_nearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:Text="附近的人"
+                app:leftIcon="@drawable/icon_de_nearby" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_bottle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:Text="漂流瓶"
-        app:leftIcon="@drawable/icon_de_ping" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_bottle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                app:Text="漂流瓶"
+                app:leftIcon="@drawable/icon_de_ping" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_shopping"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:Text="购物"
-        app:leftIcon="@drawable/icon_de_shop" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_shopping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:Text="购物"
+                app:leftIcon="@drawable/icon_de_shop" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@android:color/darker_gray" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_game"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                app:Text="游戏"
+                app:leftIcon="@drawable/icon_de_game" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_game"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:Text="游戏"
-        app:leftIcon="@drawable/icon_de_game" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:Text="卡包"
+                app:leftIcon="@drawable/icon_me_card" />
 
-    <samwoo.samchat.widget.DiscoveryView
-        android:id="@+id/id_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:Text="卡包"
-        app:leftIcon="@drawable/icon_me_card" />
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_shopping1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:Text="购物"
+                app:leftIcon="@drawable/icon_de_shop" />
+
+            <samwoo.samchat.widget.DiscoveryView
+                android:id="@+id/id_game1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                app:Text="游戏"
+                app:leftIcon="@drawable/icon_de_game" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

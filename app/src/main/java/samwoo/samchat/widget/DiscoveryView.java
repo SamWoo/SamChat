@@ -1,11 +1,15 @@
 package samwoo.samchat.widget;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.media.Image;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -26,6 +30,8 @@ public class DiscoveryView extends RelativeLayout implements View.OnClickListene
     TextView tvDisc;
     @BindView(R.id.img_dynamic)
     ImageView mDynamic;
+    @BindView(R.id.layout_disc)
+    RelativeLayout disc;
 
     private int discId;
     private int dynicId;
@@ -59,7 +65,26 @@ public class DiscoveryView extends RelativeLayout implements View.OnClickListene
         text = a.getString(R.styleable.DiscoveryView_Text);
         a.recycle();
 
+        //设置view点击监听器
         this.setOnClickListener(this);
+        //设置touch事件监听更改view的背景色
+        this.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:  // 按下时图像变灰
+                        disc.setBackgroundColor(getResources().getColor(R.color.btn_white_pressed));
+                        break;
+                    case MotionEvent.ACTION_UP:   // 手指离开或取消操作时恢复原色
+                    case MotionEvent.ACTION_CANCEL:
+                        disc.setBackgroundColor(Color.WHITE);
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     @Override

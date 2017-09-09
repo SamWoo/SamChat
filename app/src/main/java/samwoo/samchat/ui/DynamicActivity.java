@@ -1,4 +1,4 @@
-package samwoo.samchat.ui.fragment;
+package samwoo.samchat.ui;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,10 +14,11 @@ import java.util.List;
 import java.util.Random;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 import samwoo.samchat.App;
 import samwoo.samchat.R;
 import samwoo.samchat.adapter.DynamicAdapter;
+import samwoo.samchat.base.BaseActivity;
 import samwoo.samchat.base.BaseFragment;
 import samwoo.samchat.model.DynamicItemModel;
 import samwoo.samchat.widget.RecycleViewDivider;
@@ -27,7 +27,7 @@ import samwoo.samchat.widget.RecycleViewDivider;
  * Created by Administrator on 2017/8/7.
  */
 
-public class DynamicFragment extends BaseFragment {
+public class DynamicActivity extends BaseActivity {
     @BindView(R.id.top_back)
     ImageView mBack;
     @BindView(R.id.top_text)
@@ -61,14 +61,13 @@ public class DynamicFragment extends BaseFragment {
     };
 
     @Override
-    public int getResLayout() {
+    public int getLayoutResoure() {
         return R.layout.fragment_dynamic;
     }
 
     @Override
     public void init() {
-        mBack.setVisibility(View.GONE);
-        mTitle.setText("动态");
+        mTitle.setText("朋友圈");
         initData();
         initRecycleView();
         initSwipeRefresh();
@@ -80,11 +79,11 @@ public class DynamicFragment extends BaseFragment {
     }
 
     private void initRecycleView() {
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setAutoMeasureEnabled(true);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(false);
-        adapter = new DynamicAdapter(getContext(), modelList);
+        adapter = new DynamicAdapter(this, modelList);
         if (App.DEBUG) {
             for (int k = 0; k < modelList.size(); k++) {
                 for (int j = 0; j < modelList.get(k).getImages().size(); j++) {
@@ -93,10 +92,19 @@ public class DynamicFragment extends BaseFragment {
             }
         }
         //headerView必须在RecyclerView设置manager后进行视图填充
-        headerView = LayoutInflater.from(getContext()).inflate(R.layout.layout_head, recyclerView, false);
+        headerView = LayoutInflater.from(this).inflate(R.layout.layout_head, recyclerView, false);
         adapter.setHeaderView(headerView);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new RecycleViewDivider(getContext(), LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider,true));
+        recyclerView.addItemDecoration(new RecycleViewDivider(this, LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider, true));
+    }
+
+    @OnClick({R.id.top_back})
+    public void onViewClick(View view) {
+        switch (view.getId()) {
+            case R.id.top_back:
+                onBackPressed();
+                break;
+        }
     }
 
     /**

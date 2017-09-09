@@ -16,14 +16,9 @@
         android:layout_gravity="center"
         android:layout_marginBottom="4dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_header"
+        android:padding="1dp"
         android:src="@drawable/avatar_1" />
-    <!--分割线-->
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="1dp"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:background="@color/colorF0" />-->
 
     <!--输入手机号码-->
     <LinearLayout

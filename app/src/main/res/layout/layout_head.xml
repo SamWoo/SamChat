@@ -29,11 +29,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/img_bg_head"
-        android:paddingRight="12dp"
+        android:layout_marginBottom="8dp"
         android:layout_toLeftOf="@id/img_head"
+        android:paddingRight="12dp"
         android:text="Sam"
-        android:textSize="16sp"
         android:textColor="@color/colorWhite"
-        android:layout_marginBottom="8dp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
