@@ -1,7 +1,10 @@
 package samwoo.samchat.ui.fragment;
 
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,14 +12,13 @@ import java.util.List;
 import butterknife.BindView;
 import samwoo.samchat.R;
 import samwoo.samchat.base.BaseFragment;
-import samwoo.samchat.widget.MultiImageView;
 
 /**
  * Created by Administrator on 2017/9/3.
  */
 
 public class SettingFragment extends BaseFragment {
-//    @BindView(R.id.image_friend)
+    //    @BindView(R.id.image_friend)
 //    ImageView imageView;
 //    @BindView(R.id.tv_friend_dynamic)
 //    TextView tv_dynamic;
@@ -26,6 +28,13 @@ public class SettingFragment extends BaseFragment {
 //    MultiImageView multiImageView;
 //    @BindView(R.id.tv_comment)
 //    TextView tv_comment;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
+    @BindView(R.id.img_show)
+    ImageView imageView;
+
 
     public static final String[] PHOTOS = {
             "http://f.hiphotos.baidu.com/image/pic/item/faf2b2119313b07e97f760d908d7912396dd8c9c.jpg",
@@ -48,7 +57,7 @@ public class SettingFragment extends BaseFragment {
 
     @Override
     public int getResLayout() {
-        return R.layout.framgent_discovery;
+        return R.layout.fragment_setting;
     }
 
     @Override
@@ -59,5 +68,12 @@ public class SettingFragment extends BaseFragment {
 //        }
 //
 //        multiImageView.setList(mList);
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        collapsingToolbar.setTitle("Discovery");
     }
 }

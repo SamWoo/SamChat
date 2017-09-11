@@ -98,6 +98,7 @@ public class DynamicActivity extends BaseActivity {
         recyclerView.addItemDecoration(new RecycleViewDivider(this, LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider, true));
     }
 
+    //View点击事件监听响应
     @OnClick({R.id.top_back})
     public void onViewClick(View view) {
         switch (view.getId()) {

@@ -106,6 +106,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
             android:adjustViewBounds="true"
+            android:padding="1dp"
             android:scaleType="centerCrop"
             android:src="@drawable/login_mingw_icon" />
 
