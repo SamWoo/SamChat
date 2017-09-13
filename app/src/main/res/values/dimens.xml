@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_margin_right">8dp</dimen>
     <dimen name="activity_margin_left">8dp</dimen>
+    <dimen name="guideview_width">8dp</dimen>
+    <dimen name="guideview_heigth">8dp</dimen>
 </resources>

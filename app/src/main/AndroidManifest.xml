@@ -86,9 +86,14 @@
             android:name=".ui.AddContactActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
+        <!--朋友圈动态-->
         <activity
             android:name=".ui.DynamicActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--图片浏览-->
+        <activity
+            android:name=".ui.ImagePagerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

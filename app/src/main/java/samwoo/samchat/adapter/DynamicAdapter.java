@@ -19,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import samwoo.samchat.R;
 import samwoo.samchat.model.DynamicItemModel;
+import samwoo.samchat.ui.ImagePagerActivity;
 import samwoo.samchat.widget.MultiImageView;
 import samwoo.samchat.widget.PraiseView;
 
@@ -88,7 +89,9 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
         if (getItemViewType(pos) == TYPE_HEADER) return;
 
         int position = getRealPosition(holder);
-        holder.multiImageView.setList(modelList.get(position).getImages());
+        //获取图片的url
+        final List<String> photos=modelList.get(position).getImages();
+        holder.multiImageView.setList(photos);
 //        Log.e("Sam", "position=====" + position + "\ncount=====" + modelList.get(position).getImages().size());
         Glide.with(context).load(modelList.get(position).getAvatarId()).into(holder.imageView);
         holder.tv_dynamic.setText(modelList.get(position).getDynamicText());
@@ -98,7 +101,15 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
         holder.multiImageView.setOnItemClickListener(new MultiImageView.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, float PressX, float PressY) {
-
+                //装载图片url
+                List<String> imageUrls = new ArrayList<>();
+                for (String url : photos) {
+                    imageUrls.add(url);
+                }
+                Log.e("Sam","click image==="+imageUrls.size());
+                //imageSize是作为loading时的图片size
+                ImagePagerActivity.ImageSize imageSize = new ImagePagerActivity.ImageSize(view.getMeasuredWidth(), view.getMeasuredHeight());
+                ImagePagerActivity.startImagePagerActivity(context, imageUrls, position, imageSize);
             }
 
             @Override
