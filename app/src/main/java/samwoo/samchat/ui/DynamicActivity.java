@@ -96,6 +96,14 @@ public class DynamicActivity extends BaseActivity {
         adapter.setHeaderView(headerView);
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new RecycleViewDivider(this, LinearLayoutManager.HORIZONTAL, R.drawable.recycleview_divider, true));
+
+        ImageView headImageView = headerView.findViewById(R.id.img_head);
+        headImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(ImageShowActivity.class, false);
+            }
+        });
     }
 
     //View点击事件监听响应
@@ -105,6 +113,7 @@ public class DynamicActivity extends BaseActivity {
             case R.id.top_back:
                 onBackPressed();
                 break;
+
         }
     }
 
@@ -131,11 +140,11 @@ public class DynamicActivity extends BaseActivity {
             if (N % 2 == 0) {
                 model.setAvatarId(R.drawable.avatar_1);
                 model.setName("Helen");
-                model.setDynamicText("Hi, boy! Can I help you?");
+                model.setDynamicText("Hi,快来看美女 ( ⊙ o ⊙ )啊！");
             } else {
                 model.setAvatarId(R.drawable.avatar_2);
                 model.setName("Bob");
-                model.setDynamicText("Hi, Girl! Nice to meet you!!");
+                model.setDynamicText("哈哈哈.....有美女看咯！！！");
             }
 
             for (int j = 0; j < N; j++) {

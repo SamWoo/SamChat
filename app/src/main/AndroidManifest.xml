@@ -94,8 +94,15 @@
         <!--图片浏览-->
         <activity
             android:name=".ui.ImagePagerActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--头像预览界面-->
+        <activity
+            android:name=".ui.ImageShowActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageShowStyle" />
 
         <!-- 设置环信应用的AppKey -->
         <meta-data

@@ -130,7 +130,6 @@
         android:layout_margin="16dp"
         android:src="@drawable/email"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"
-        android:backgroundTint="@android:color/transparent"/>
+        app:layout_anchorGravity="bottom|end" />
 
 </android.support.design.widget.CoordinatorLayout>

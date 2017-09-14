@@ -90,7 +90,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
 
         int position = getRealPosition(holder);
         //获取图片的url
-        final List<String> photos=modelList.get(position).getImages();
+        final List<String> photos = modelList.get(position).getImages();
         holder.multiImageView.setList(photos);
 //        Log.e("Sam", "position=====" + position + "\ncount=====" + modelList.get(position).getImages().size());
         Glide.with(context).load(modelList.get(position).getAvatarId()).into(holder.imageView);
@@ -98,6 +98,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
         holder.tv_name.setText(modelList.get(position).getName());
         holder.tv_comment.setText("评论区........");
 
+        //点击图片进入图片浏览模式
         holder.multiImageView.setOnItemClickListener(new MultiImageView.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, float PressX, float PressY) {
@@ -106,7 +107,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
                 for (String url : photos) {
                     imageUrls.add(url);
                 }
-                Log.e("Sam","click image==="+imageUrls.size());
+                Log.e("Sam", "click image===" + imageUrls.size());
                 //imageSize是作为loading时的图片size
                 ImagePagerActivity.ImageSize imageSize = new ImagePagerActivity.ImageSize(view.getMeasuredWidth(), view.getMeasuredHeight());
                 ImagePagerActivity.startImagePagerActivity(context, imageUrls, position, imageSize);
@@ -124,7 +125,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
                 praiseCount++;
                 int resId = (praiseCount % 2 == 0) ? R.drawable.share_praise_grey : R.drawable.share_praise_red;
                 holder.mPraise.setIcon(resId);
-                Log.e("Sam", "PraiseCount==" + praiseCount + "\n resID===" + resId);
+//                Log.e("Sam", "PraiseCount==" + praiseCount + "\n resID===" + resId);
             }
         });
     }

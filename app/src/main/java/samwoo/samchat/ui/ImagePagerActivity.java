@@ -217,7 +217,6 @@ public class ImagePagerActivity extends BaseActivity {
                         });
                 container.addView(view, 0);
             }
-
             return view;
         }
     }

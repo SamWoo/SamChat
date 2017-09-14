@@ -20,11 +20,12 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     private ProgressDialog progressDialog;
     private Unbinder binder;
+    View root;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(getResLayout(), null);
+        root = inflater.inflate(getResLayout(), null);
         binder = ButterKnife.bind(this, root);
         init();
         return root;
@@ -65,5 +66,7 @@ public abstract class BaseFragment extends Fragment {
             progressDialog = null;
         }
         binder.unbind();
+
+        root = null;
     }
 }
