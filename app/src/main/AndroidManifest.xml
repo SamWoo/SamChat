@@ -103,6 +103,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/ImageShowStyle" />
+        <!--TestActivity-->
+        <activity
+            android:name=".ui.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <!-- 设置环信应用的AppKey -->
         <meta-data
