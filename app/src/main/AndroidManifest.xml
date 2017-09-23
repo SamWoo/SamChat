@@ -108,6 +108,16 @@
             android:name=".ui.TestActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--ScanActivity-->
+        <activity
+            android:name=".ui.ScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--ScanQRcodeActivity-->
+        <activity
+            android:name=".ui.ScanQRcodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <!-- 设置环信应用的AppKey -->
         <meta-data

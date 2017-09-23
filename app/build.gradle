@@ -72,6 +72,8 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.12.0'
     //support zhy-autoLayout
     compile 'com.zhy:autolayout:1.4.5'
+    //support zxing
+    compile 'cn.yipianfengye.android:zxing-library:2.2'
 
     //support bomb
     //    compile 'cn.bmob.android:bmob-sdk:3.5.5'

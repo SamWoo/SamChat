@@ -22,6 +22,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.chat.EMTextMessageBody;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
 import java.util.Iterator;
@@ -61,6 +62,8 @@ public class App extends Application {
 
         Fresco.initialize(this, config);
         AutoLayoutConifg.getInstance().useDeviceSize();
+        //初始化Zxing组件
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
     //初始化 Database
