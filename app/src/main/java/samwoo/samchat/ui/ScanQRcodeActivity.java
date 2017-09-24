@@ -33,7 +33,7 @@ public class ScanQRcodeActivity extends BaseActivity {
         return R.layout.activity_qrcode_scan;
     }
 
-    CodeUtils.AnalyzeCallback analyzeCallback = new CodeUtils.AnalyzeCallback() {
+    private CodeUtils.AnalyzeCallback analyzeCallback = new CodeUtils.AnalyzeCallback() {
         @Override
         public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
             Intent intent = new Intent();

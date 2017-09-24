@@ -58,6 +58,7 @@ public class ScanActivity extends BaseActivity {
                 startActivityForResult(new Intent(this, ScanQRcodeActivity.class), REQUEST_CODE);
                 break;
             case R.id.button4:
+                startActivity(CreateQRcodeActivity.class, false);
                 break;
         }
     }

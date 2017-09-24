@@ -20,8 +20,8 @@
         app:inner_corner_color="@color/colorRed"
         app:inner_corner_length="30dp"
         app:inner_corner_width="5dp"
-        app:inner_scan_speed="20"
-        app:inner_scan_iscircle="false"
+        app:inner_scan_speed="30"
+        app:inner_scan_iscircle="true"
         />
 
 </FrameLayout>
