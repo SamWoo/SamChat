@@ -27,5 +27,5 @@
 -keep class com.hyphenate.** {*;}
 -dontwarn  com.hyphenate.**
 -keep class com.superrtc.** {*;}
--keep class cn.bmob.v3.* {*;}
+-keep class cn.bmob.v3.* {}
 -keep class vi.com.gdi.bgl.android.**{*;}
