@@ -115,7 +115,7 @@ public class ContactPresenterImpl implements ContactPresenter {
     }
 
     @Override
-    public void deleteFriend(String name) {
+    public void deleteFriend(final String name) {
         ThreadUtils.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {

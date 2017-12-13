@@ -1,23 +1,12 @@
 package samwoo.samchat.ui;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.hyphenate.EMConnectionListener;
-import com.hyphenate.EMError;
-import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMConversation;
-import com.hyphenate.chat.EMMessage;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabSelectListener;
-
-import java.util.List;
 
 import butterknife.BindView;
 import samwoo.samchat.R;

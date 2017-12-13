@@ -17,7 +17,7 @@ import android.view.View;
  * Created by Administrator on 2017/9/19.
  */
 
-public class TaijiView extends View implements Runnable {
+public class TaijiView extends View {
 
     private Paint paint;
     private int degree = 0;
@@ -47,7 +47,6 @@ public class TaijiView extends View implements Runnable {
     private void init() {
         paint = new Paint();
         paint.setAntiAlias(true);
-        new Thread(this).start();
     }
 
     @Override
@@ -94,37 +93,10 @@ public class TaijiView extends View implements Runnable {
         canvas.drawCircle(width * 3 / 4, height / 2, 50, paint);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawCircle(width / 2, height / 2, width / 2, paint);
-        canvas.rotate(degree, width / 2, height / 2);
-//        paint.setColor(Color.RED);
-//        paint.setTextSize(20);
-//        canvas.drawText("太极", width / 2, height + 10, paint);
-//        canvas.restore();
-    }
+        canvas.restore();
+        paint.setColor(Color.RED);
+        paint.setTextSize(20);
+        canvas.drawText("太极", width / 2, height + 10, paint);
 
-    @Override
-    public void run() {
-        try {
-            while (true) {
-                if (isRotate) {
-                    Log.e("Sam", "isRotate=====" + isRotate);
-                    this.degree += 10;
-//                    this.postInvalidate();//刷新界面
-                    Log.e("Sam", "degree------>" + degree);
-                    Thread.sleep(50);
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void startRotate() {
-        this.isRotate = true;
-        this.invalidate();
-    }
-
-    public void stopRotate() {
-        this.isRotate = false;
-        this.invalidate();
     }
 }

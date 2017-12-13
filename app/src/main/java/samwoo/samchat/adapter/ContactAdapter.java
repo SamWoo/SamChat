@@ -39,7 +39,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ContactItemModel item = mContactList.get(position);
+        final ContactItemModel item = mContactList.get(position);
         holder.mName.setText(item.name);
 //        Glide.with(context).load(mContactList.get(position)).centerCrop().into(holder.mAvatar);
         holder.itemView.setTag(position);

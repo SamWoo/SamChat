@@ -101,6 +101,11 @@ public class ConversationFragment extends BaseFragment implements IConversationV
         }
 
         @Override
+        public void onMessageRecalled(List<EMMessage> list) {
+
+        }
+
+        @Override
         public void onMessageChanged(EMMessage message, Object change) {
 
         }

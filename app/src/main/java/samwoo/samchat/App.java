@@ -22,6 +22,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMOptions;
 import com.hyphenate.chat.EMTextMessageBody;
+import com.hyphenate.easeui.EaseUI;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
@@ -30,7 +31,7 @@ import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import samwoo.samchat.database.DatabaseManager;
-import samwoo.samchat.ui.ChatActivity;
+import samwoo.samchat.ui.ChatActivityBak;
 
 import static android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
 
@@ -92,6 +93,7 @@ public class App extends Application {
         EMClient.getInstance().init(getApplicationContext(), options);
         //在做打包混淆时，关闭debug模式，避免消耗不必要的资源
         EMClient.getInstance().setDebugMode(true);
+        EaseUI.getInstance().init(getApplicationContext(), options);
     }
 
     //获取AppName
@@ -158,6 +160,11 @@ public class App extends Application {
         }
 
         @Override
+        public void onMessageRecalled(List<EMMessage> list) {
+
+        }
+
+        @Override
         public void onMessageChanged(EMMessage message, Object change) {
 
         }
@@ -173,7 +180,8 @@ public class App extends Application {
         if (message.getBody() instanceof EMTextMessageBody)
             content = ((EMTextMessageBody) message.getBody()).getMessage();
         //设置通知点击跳转意图
-        Intent intent = new Intent(this, ChatActivity.class);
+        Intent intent = new Intent(this, ChatActivityBak.class);
+//        Intent intent = new Intent(this, ChatActivity.class);
         intent.putExtra("user_name", message.getUserName());
         PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         //通知设置

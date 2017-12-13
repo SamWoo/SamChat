@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="samwoo.samchat"
     android:versionCode="100"
-    android:versionName="1.0.0">
+    android:versionName="1.0.0"
+    >
 
     <!-- Required -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -27,6 +28,8 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <!--相机-->
+    <uses-feature android:name="android.hardware.camera2.autofocus" />
 
     <application
         android:name=".App"

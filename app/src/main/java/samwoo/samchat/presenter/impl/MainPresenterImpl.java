@@ -65,6 +65,11 @@ public class MainPresenterImpl implements MainPresenter {
         }
 
         @Override
+        public void onMessageRecalled(List<EMMessage> list) {
+
+        }
+
+        @Override
         public void onMessageChanged(EMMessage message, Object change) {
 
         }

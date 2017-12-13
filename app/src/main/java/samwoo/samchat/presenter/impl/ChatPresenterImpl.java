@@ -1,7 +1,6 @@
 package samwoo.samchat.presenter.impl;
 
 import com.hyphenate.EMCallBack;
-import com.hyphenate.chat.EMChatManager;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.chat.EMMessage;
@@ -34,7 +33,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
-    public void sendMsg(String userName, String msg) {
+    public void sendMsg(final String userName, final String msg) {
         ThreadUtils.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
@@ -57,7 +56,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
-    public void loadMsg(String userName) {
+    public void loadMsg(final String userName) {
         ThreadUtils.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
@@ -73,7 +72,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
-    public void loadMoreMsg(String userName) {
+    public void loadMoreMsg(final String userName) {
         if (hasMoreData) {
             ThreadUtils.runOnBackgroundThread(new Runnable() {
                 @Override

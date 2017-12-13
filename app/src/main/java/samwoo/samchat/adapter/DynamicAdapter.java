@@ -85,7 +85,7 @@ public class DynamicAdapter extends RecyclerView.Adapter<DynamicAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int pos) {
+    public void onBindViewHolder(final ViewHolder holder, int pos) {
         if (getItemViewType(pos) == TYPE_HEADER) return;
 
         int position = getRealPosition(holder);

@@ -27,7 +27,7 @@ import samwoo.samchat.model.ContactItemModel;
 import samwoo.samchat.presenter.ContactPresenter;
 import samwoo.samchat.presenter.impl.ContactPresenterImpl;
 import samwoo.samchat.ui.AddContactActivity;
-import samwoo.samchat.ui.ChatActivity;
+import samwoo.samchat.ui.ChatActivityBak;
 import samwoo.samchat.view.IContactView;
 import samwoo.samchat.widget.RecycleViewDivider;
 import samwoo.samchat.widget.SlideBar;
@@ -163,7 +163,7 @@ public class ContactFragment extends BaseFragment implements IContactView {
          */
         @Override
         public void onClicked(String name) {
-            Intent intent = new Intent(getActivity(), ChatActivity.class);
+            Intent intent = new Intent(getActivity(), ChatActivityBak.class);
             intent.putExtra("user_name", name);
             startActivity(intent);
         }
@@ -178,7 +178,7 @@ public class ContactFragment extends BaseFragment implements IContactView {
         }
     };
 
-    private void showDeleteFriendDialog(String name) {
+    private void showDeleteFriendDialog(final String name) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setMessage("确定删除" + name + "?")
                 .setTitle("删除好友")
