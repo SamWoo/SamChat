@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="samwoo.samchat"
     android:versionCode="100"
-    android:versionName="1.0.0"
-    >
+    android:versionName="1.0.0">
 
     <!-- Required -->
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -109,6 +108,11 @@
         <!--TestActivity-->
         <activity
             android:name=".ui.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--WatchActivity-->
+        <activity
+            android:name=".ui.WatchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!--ScanActivity-->

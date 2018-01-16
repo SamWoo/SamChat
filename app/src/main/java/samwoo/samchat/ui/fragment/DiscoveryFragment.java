@@ -11,6 +11,7 @@ import samwoo.samchat.base.BaseFragment;
 import samwoo.samchat.ui.DynamicActivity;
 import samwoo.samchat.ui.ScanActivity;
 import samwoo.samchat.ui.TestActivity;
+import samwoo.samchat.ui.WatchActivity;
 import samwoo.samchat.widget.DiscoveryView;
 
 /**
@@ -37,7 +38,7 @@ public class DiscoveryFragment extends BaseFragment {
         mTitle.setText("发现");
     }
 
-    @OnClick({R.id.friend_circle, R.id.id_scan, R.id.id_nearby})
+    @OnClick({R.id.friend_circle, R.id.id_scan, R.id.id_shake, R.id.id_nearby})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.friend_circle:
@@ -48,6 +49,9 @@ public class DiscoveryFragment extends BaseFragment {
                 break;
             case R.id.id_nearby:
                 startActivity(TestActivity.class, false);
+                break;
+            case R.id.id_shake:
+                startActivity(WatchActivity.class, false);
                 break;
             default:
                 break;

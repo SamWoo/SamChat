@@ -94,9 +94,9 @@ public class TaijiView extends View {
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawCircle(width / 2, height / 2, width / 2, paint);
         canvas.restore();
-        paint.setColor(Color.RED);
-        paint.setTextSize(20);
-        canvas.drawText("太极", width / 2, height + 10, paint);
+//        paint.setColor(Color.RED);
+//        paint.setTextSize(20);
+//        canvas.drawText("太极", width / 2, height + 10, paint);
 
     }
 }
