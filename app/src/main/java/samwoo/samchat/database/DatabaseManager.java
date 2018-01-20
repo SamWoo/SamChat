@@ -42,7 +42,7 @@ public class DatabaseManager {
         mDaoSession = daoMaster.newSession();
     }
 
-    //保存联系人
+    //保存/增加一个联系人
     public void saveContact(String name) {
         Contact contact = new Contact();
         contact.setUserName(name);
@@ -56,13 +56,42 @@ public class DatabaseManager {
 
     //删除某一个联系人
     public void deleteContact(String name) {
-//        Contact contact = mDaoSession.getContactDao().queryBuilder().where(null, null);
-//        mDaoSession.getContactDao().delete(contact);
+        Contact contact = mDaoSession.getContactDao()
+                .queryBuilder()
+                .where(ContactDao.Properties.UserName.eq(name))
+                .build()
+                .unique();
+        if (null != contact) {
+            mDaoSession.getContactDao().delete(contact);
+        }
+    }
+
+    /**
+     * 根据昵称查询数据库返回一个符合条件的集合
+     *
+     * @param name
+     * @return
+     */
+    public ArrayList<String> queryContactByName(String name) {
+        List<Contact> list = mDaoSession.getContactDao()
+                .queryBuilder()
+                .where(ContactDao.Properties.UserName.eq(name))
+                .limit(5)
+                .build()
+                .list();
+        ArrayList<String> contacts = new ArrayList<>();
+        for (Contact contact : list) {
+            String userName = contact.getUserName();
+            contacts.add(userName);
+        }
+        return contacts;
     }
 
     //查询所有联系人
     public List<String> queryAllContacts() {
-        List<Contact> mList = mDaoSession.getContactDao().queryBuilder().list();
+        List<Contact> mList = mDaoSession.getContactDao()
+                .queryBuilder()
+                .list();
         ArrayList<String> contacts = new ArrayList<String>();
         for (int i = 0; i < mList.size(); i++) {
             String contact = mList.get(i).getUserName();
@@ -70,6 +99,4 @@ public class DatabaseManager {
         }
         return contacts;
     }
-
-    //添加一个联系人
 }
